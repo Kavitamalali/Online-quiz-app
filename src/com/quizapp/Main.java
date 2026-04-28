@@ -9,5 +9,5 @@ public class Main {
         User user = new User("testuser", "pass");
         UserDAO.registerUser(user);
 
-    }
-}
+    }    // Updated name test
+}   
