@@ -28,6 +28,28 @@ public class DBConnection {
                     "title TEXT)";
 
             stmt.execute(quizTable);
+            
+            // Question Table
+            String questionTable = "CREATE TABLE IF NOT EXISTS questions (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    "quiz_id INTEGER, " +
+                    "question TEXT, " +
+                    "option1 TEXT, " +
+                    "option2 TEXT, " +
+                    "option3 TEXT, " +
+                    "option4 TEXT, " +
+                    "correct_answer INTEGER)";
+
+            stmt.execute(questionTable);
+            
+            // Result Table
+            String resultTable = "CREATE TABLE IF NOT EXISTS results (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    "username TEXT, " +
+                    "quiz_id INTEGER, " +
+                    "score INTEGER)";
+
+            stmt.execute(resultTable);
 
         } catch (Exception e) {
             e.printStackTrace();
